@@ -16,6 +16,14 @@ const makeWASocket = require("@whiskeysockets/baileys").default
 let phoneNumber = "6289688206739"
 let owner = "6289688206739"
 
+///
+require("http").createServer((_, res) => res.end("Uptime!")).listen(8080)
+///
+///
+process.on('uncaughtException', console.error)
+///
+    
+
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
