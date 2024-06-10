@@ -101,7 +101,7 @@ const upsert = events['messages.upsert']
 for (let msg of upsert.messages) {
 if (msg.key.remoteJid === 'status@broadcast') {
 if (msg.message?.protocolMessage) return
-console.log(`👤 Lihat 🔥 status ${msg.pushName} ${msg.key.participant.split('@')[0]}`)
+console.log(`Lihat : status ${msg.pushName} ${msg.key.participant.split('@')[0]}`)
 await ZassTdr.readMessages([msg.key])
 await delay(1000)
 return await ZassTdr.readMessages([msg.key])}}
